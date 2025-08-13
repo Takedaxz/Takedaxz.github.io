@@ -1,80 +1,152 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pattaradanai Thanomsittikul</title>
+    <title>Pattaradanai Thanomsittikul - Computer Engineering Student</title>
+    <meta name="description" content="Personal portfolio of Pattaradanai Thanomsittikul, Computer Engineering student at Chulalongkorn University specializing in AI and Machine Learning">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <p>Pattaradanai Thanomsittikul</p>
-        <!-- <div class="header-right">
-            <button id="darkModeToggle">DarkMode</button>
-        </div> -->
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">Pattaradanai Thanomsittikul</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="me">
-            <div class="me-image">
-                <img src="images/profile.jpeg" alt="profile" class="me-image">
-            </div>
-            <div class="me-content">
-                <h2>Hello there! I'm Pookan.</h2>
-                <h3>Pattaradanai Thanomsittikul (ภัทรดนัย ถนอมสิทธิกุล)</h3>
-                <p>I am a second-year Computer Engineering student at Chulalongkorn University with a genuine passion for Artificial Intelligence and Machine Learning. I’m eager to learn, grow, and apply my skills to create impactful solutions that solve real-world problems.</p>
-                <!-- <p>Beyond the classroom, I actively explore AI-related projects, from small prototypes to collaborative innovations. I enjoy blending technical knowledge with creativity to build smart systems that make people’s lives easier and more efficient. I'm particularly interested in how AI can be used ethically and responsibly to drive positive social change.</p> -->
-                <div class="social">
-                    <a href="mailto:pattaradanait@outlook.com" class="contact" target="_blank">Mail</a><br>
-                    <a class="contact" target="_blank" href="https://github.com/Takedaxz">Github</a><br>
-                    <a class="contact" target="_blank" href="https://www.instagram.com/pookanlnwza/">Instagram</a><br>
-                    <a class="contact" target="_blank" href="https://www.facebook.com/pkpt.pookan/">Facebook</a><br>
-                    <a class="contact" target="_blank" href="https://www.linkedin.com/in/pattaradanai-thanomsittikul-69895130b/">LinkedIn</a>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="greeting">Hi there, I'm</span>
+                            <span class="name">Pookan</span>
+                        </h1>
+                        <p class="hero-description">
+                            Computer Engineering student with a passion for <span class="highlight">Artificial Intelligence</span> and <span class="highlight">Machine Learning</span>. 
+                            I believe in building intelligent solutions that make a real impact on people's lives.
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/profile.jpeg" alt="Pattaradanai Thanomsittikul" class="profile-image">
+                    </div>
                 </div>
-            </div>
-        </section>
-        
-        <section id="home" class="about">
-            <div class="me-content">
-                <h3>Experience</h3>
-                <div class="social">
-                    <ul>
-                        <li>Member of CU Blood (2024)</li>
-                        <p>Chulalongkorn University Blood Donation Club</p>
-                        <li>Intern at Bank of Thailand (2024)</li>
-                        <p>RPA Developer at department: Data Management and Analytics Department, Information Technology Group.</p>
-                        <!-- <li>Intern at Yuanta Securites (2025)</li>
-                        <p>Quantitive Trainee</p> -->
-                    </ul>    
-                </div>
-                <br>
-                <h3>Education</h3>
-                <div class="social">
-                    <ul>
-                        <li>Chulalongkorn University (2023 - Present)</li>
-                        <p>Faculty of Engineering, Computer Engineering (CEDT)</p>
-                        <li>Triam Udom Suksa School (2020 - 2023)</li>
-                        <p>Science-Math Program</p>
-                        <li>Rayongwittayakom School (2017 - 2020)</li>
-                        <p>GIFTED Program</p>
-                    </ul>
-                </div>
-                <br>
-                <h3>Competitions and Certifications</h3>
-                <div class="compete">
-                    <ul>
-                        <li>3rd place in Chula Legaltech Year 6</li>
-                    </ul>
-                </div>
-                <br>     
             </div>
         </section>
 
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Work</h2>
+                </div>
+                
+                <div class="work-grid">
+                    <div class="work-item">
+                        <div class="work-content">
+                            <h3>Yuanta Securities Thailand</h3>
+                            <p class="work-role">Quantitative Trainee & AI Researcher</p>
+                            <div class="work-tags">
+                                <span class="tag tag-blue">AI Research</span>
+                                <span class="tag tag-green">Quantitative Analysis</span>
+                                <span class="tag tag-purple">Financial Technology</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-content">
+                            <h3>Bank of Thailand</h3>
+                            <p class="work-role">RPA Developer</p>
+                            <div class="work-tags">
+                                <span class="tag tag-orange">RPA</span>
+                                <span class="tag tag-blue">Data Management</span>
+                                <span class="tag tag-green">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-content">
+                            <h3>CU Blood</h3>
+                            <p class="work-role">Member</p>
+                            <div class="work-tags">
+                                <span class="tag tag-red">Volunteer</span>
+                                <span class="tag tag-purple">Community Service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About</h2>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a third-year Computer Engineering student at Chulalongkorn University with a genuine passion for Artificial Intelligence and Machine Learning. I'm eager to learn, grow, and apply my skills to create impactful solutions that solve real-world problems.</p>
+                        
+                        <h3>Education</h3>
+                        <ul class="education-list">
+                            <li><strong>Chulalongkorn University</strong> (2023 - Present)<br>Faculty of Engineering, Computer Engineering (CEDT)</li>
+                            <li><strong>Triam Udom Suksa School</strong> (2020 - 2023)<br>Science-Math Program</li>
+                            <li><strong>Rayongwittayakom School</strong> (2017 - 2020)<br>GIFTED Program</li>
+                        </ul>
+
+                        <h3>Achievements</h3>
+                        <ul class="achievement-list-simple">
+                            <li>3rd Place - Chula Legaltech Year 6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                
+                <div class="contact-content">
+                    <p>Interested in working together or looking to chat? Shoot me a message and let's talk!</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:pattaradanait@outlook.com" class="contact-link">Get in Touch</a>
+                        <a href="https://www.linkedin.com/in/pattaradanai-thanomsittikul-69895130b/" class="contact-link" target="_blank">LinkedIn</a>
+                        <a href="#about" class="contact-link">About Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Pattaradanai Thanomsittikul, Copyright.</p>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2025 Pattaradanai Thanomsittikul. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
