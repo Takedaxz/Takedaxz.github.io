@@ -9,11 +9,11 @@
     --text-secondary: #6B7280;
     --text-muted: #9CA3AF;
 
-    --accent-primary: #6B7280;
-    --accent-secondary: #9CA3AF;
-    --accent-tertiary: #D1D5DB;
-    --accent-success: #6B7280;
-    --accent-info: #6B7280;
+    --accent-primary: #6366F1;
+    --accent-secondary: #8B5CF6;
+    --accent-tertiary: #EC4899;
+    --accent-success: #10B981;
+    --accent-info: #3B82F6;
 
     --border-light: #E5E7EB;
     --border-medium: #D1D5DB;
@@ -28,8 +28,8 @@
     --color-danger: #EF4444;
 
     /* Gradient colors */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-primary: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    --gradient-secondary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
     --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
@@ -39,23 +39,6 @@
     --shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-    /* Colorful accent colors */
-    --color-primary: #6366F1;
-    --color-secondary: #8B5CF6;
-    --color-accent: #EC4899;
-    --color-success: #10B981;
-    --color-warning: #F59E0B;
-    --color-info: #3B82F6;
-    --color-danger: #EF4444;
-
-    /* Gradient colors */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --gradient-info: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 }
 
 
@@ -196,7 +179,7 @@ main {
     min-height: 80vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
+    background: var(--bg-primary);
     padding: 6rem 0;
 }
 
@@ -256,7 +239,7 @@ main {
 
 .name {
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .hero-description {
@@ -474,8 +457,17 @@ main {
 }
 
 .tag:hover {
-    transform: translateY(-2px);
+    transform: scale(1.05);
     box-shadow: var(--shadow-md);
+}
+
+.work-time-range {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 
 /* About Section */
@@ -570,7 +562,6 @@ main {
 /* Footer */
 footer {
     background: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
     padding: 2rem 0;
 }
 
@@ -724,4 +715,109 @@ footer {
     background: var(--gradient-primary);
     width: 0%;
     transition: width 0.1s ease;
+}
+
+/* --- Lu.ma-inspired UI Enhancements --- */
+
+/* Buttons */
+.btn, button {
+    background: var(--gradient-primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    margin: 0.5rem 0;
+}
+
+.btn:hover, button:hover {
+    background: var(--gradient-secondary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.btn:active, button:active {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-md);
+    transform: scale(0.98);
+}
+
+/* Card-like containers */
+.card, .project-item, .work-item, .about-card, .experience-card, .contact-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    padding: 2rem;
+    transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.card:hover, .project-item:hover, .work-item:hover, .about-card:hover, .experience-card:hover, .contact-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px) scale(1.01);
+}
+
+/* Inputs */
+input, textarea, select {
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--border-light);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    border: 1.5px solid var(--color-primary);
+    box-shadow: 0 0 0 2px #6366f133;
+}
+
+/* Section backgrounds for separation */
+section, .projects, .work, .about, .contact {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Accent text and highlights */
+.accent {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* Subtle divider */
+.divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 2rem 0;
+    border-radius: 1px;
+}
+
+/* Tag enhancements */
+.tag {
+    border-radius: 15px;
+    font-weight: 600;
+    padding: 0.4rem 1.1rem;
+    font-size: 0.85rem;
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    transition: background 0.2s, box-shadow 0.2s;
+    opacity: 0.8;
+}
+
+.tag:hover {
+    box-shadow: var(--shadow-md);
 }
