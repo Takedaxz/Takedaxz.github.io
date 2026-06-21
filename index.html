@@ -51,7 +51,7 @@
         <section id="about" class="about">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">About</h2>
+                    <h2 class="section-title">About Me</h2>
                 </div>
                 
                 <div class="about-content">
@@ -66,11 +66,67 @@
                         </ul>
 
                         <h3>Achievements</h3>
-                        <ul class="achievement-list-simple">
-                            <li><strong>3rd Place</strong> - Chula Legaltech Year 6</li>
-                            <li><strong>Semi-Finalist</strong> - CBS Financial Solution Challenge 2025</li>
-                            <li><strong>Finalist</strong> - Aihack Thailand 2025</li>
-                        </ul>
+                        <div class="achievements-grid">
+                            <!-- Achievement 1 -->
+                            <div class="achievement-card" data-cert="images/cert/LegalTech.png" data-title="3rd Place - Chula Legaltech Year 6">
+                                <div class="achievement-img-container">
+                                    <img src="images/cert/LegalTech.png" alt="Chula Legaltech Year 6 Certificate" loading="lazy">
+                                    <div class="achievement-overlay">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="achievement-info">
+                                    <span class="achievement-badge">3rd Place</span>
+                                    <h4 class="achievement-title">Chula Legaltech Year 6</h4>
+                                    <span class="achievement-event">Chulalongkorn University</span>
+                                </div>
+                            </div>
+
+                            <!-- Achievement 2 -->
+                            <div class="achievement-card" data-cert="images/cert/CBS.png" data-title="Semi-Finalist - CBS Financial Solution Challenge 2025">
+                                <div class="achievement-img-container">
+                                    <img src="images/cert/CBS.png" alt="CBS Financial Solution Challenge 2025 Certificate" loading="lazy">
+                                    <div class="achievement-overlay">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="achievement-info">
+                                    <span class="achievement-badge">Semi-Finalist</span>
+                                    <h4 class="achievement-title">CBS Financial Solution Challenge 2025</h4>
+                                    <span class="achievement-event">Chulalongkorn Business School</span>
+                                </div>
+                            </div>
+
+                            <!-- Achievement 3 -->
+                            <div class="achievement-card" data-cert="images/cert/AiHack.png" data-title="Finalist - Aihack Thailand 2025">
+                                <div class="achievement-img-container">
+                                    <img src="images/cert/AiHack.png" alt="Aihack Thailand 2025 Certificate" loading="lazy">
+                                    <div class="achievement-overlay">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="achievement-info">
+                                    <span class="achievement-badge">Finalist</span>
+                                    <h4 class="achievement-title">Aihack Thailand 2025</h4>
+                                    <span class="achievement-event">AiHack Thailand</span>
+                                </div>
+                            </div>
+
+                            <!-- Achievement 4 -->
+                            <div class="achievement-card" data-cert="images/cert/WeVis.jpg" data-title="Competitor - WeVis Open Data Day 2026">
+                                <div class="achievement-img-container">
+                                    <img src="images/cert/WeVis.jpg" alt="WeVis Open Data Day 2026 Certificate" loading="lazy">
+                                    <div class="achievement-overlay">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="achievement-info">
+                                    <span class="achievement-badge">Competitor</span>
+                                    <h4 class="achievement-title">WeVis Open Data Day 2026</h4>
+                                    <span class="achievement-event">WeVis Thailand</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,6 +328,19 @@
                 <div class="work-grid">
                     <div class="work-item">
                         <div class="work-content">
+                            <h3>Bangkok Bank</h3>
+                            <span class="work-time-range">May 2026 – Present</span>
+                            <p class="work-role">Intern - Mobile Banking Data Analytics Team</p>
+                            <div class="work-tags">
+                                <span class="tag tag-blue">Data Engineering</span>
+                                <span class="tag tag-green">Data Analytics</span>
+                                <span class="tag tag-purple">Mobile Banking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-content">
                             <h3>Yuanta Securities Thailand</h3>
                             <span class="work-time-range">Aug 2025 – Oct 2025</span>
                             <p class="work-role">Part-time AI Researcher</p>
@@ -353,6 +422,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal for Certificates -->
+    <div id="certLightbox" class="lightbox-modal" aria-hidden="true" role="dialog">
+        <div class="lightbox-content">
+            <span id="lightboxClose" class="lightbox-close" role="button" aria-label="Close certificate view"><i class="fas fa-times"></i></span>
+            <img id="lightboxImg" class="lightbox-img" src="" alt="Certificate Large View">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

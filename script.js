@@ -1,9 +1,11 @@
 const toggle = document.getElementById('darkModeToggle');
 
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-});
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+}
 
 // Navigation highlighting
 document.addEventListener('DOMContentLoaded', function() {
@@ -48,23 +50,59 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set initial active state
     updateActiveNavLink();
+
+    // Certificate Lightbox
+    const certCards = document.querySelectorAll('.achievement-card');
+    const lightbox = document.getElementById('certLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    if (lightbox && certCards.length > 0) {
+        certCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const certSrc = card.getAttribute('data-cert');
+                const certTitle = card.getAttribute('data-title');
+                
+                if (certSrc) {
+                    lightboxImg.src = certSrc;
+                    lightboxCaption.textContent = certTitle;
+                    lightbox.classList.add('active');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Clear src after fade-out transition to prevent flashing
+            setTimeout(() => {
+                if (!lightbox.classList.contains('active')) {
+                    lightboxImg.src = '';
+                }
+            }, 300);
+        };
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
 });
 
-// Add scroll progress indicator
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    
-    // Create progress bar if it doesn't exist
-    let progressBar = document.querySelector('.scroll-progress');
-    if (!progressBar) {
-        const progressContainer = document.createElement('div');
-        progressContainer.className = 'scroll-indicator';
-        progressContainer.innerHTML = '<div class="scroll-progress"></div>';
-        document.body.appendChild(progressContainer);
-        progressBar = document.querySelector('.scroll-progress');
-    }
-    
-    progressBar.style.width = scrollPercent + '%';
-});
+
