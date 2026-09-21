@@ -351,12 +351,15 @@ main {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
     position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    transition: none;
 }
 
 .work-item:hover {
     box-shadow: var(--shadow-lg);
+}
+
+.work-item:has(.work-cert-wrapper:hover) {
+    z-index: 30;
 }
 
 .work-content {
@@ -408,6 +411,87 @@ main {
 
 .work-header-text .work-time-range {
     margin-bottom: 0;
+}
+
+/* Work Certificate Badge & Hover Preview */
+.work-cert-wrapper {
+    position: relative;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.work-cert-badge {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 1.2;
+    outline: none;
+    transform: none !important;
+    transition: none !important;
+}
+
+.work-cert-badge:hover,
+.work-cert-wrapper:hover .work-cert-badge,
+.work-cert-wrapper:focus-within .work-cert-badge {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+    transform: none !important;
+}
+
+.work-cert-preview {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 280px;
+    max-width: calc(100vw - 3rem);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    z-index: 100;
+}
+
+/* Invisible hover bridge to prevent cursor loss between badge and preview */
+.work-cert-preview::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
+}
+
+.work-cert-wrapper:hover .work-cert-preview,
+.work-cert-wrapper:focus-within .work-cert-preview {
+    display: block;
+}
+
+.work-cert-preview-img-box {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    aspect-ratio: 2000 / 1414;
+}
+
+.work-cert-preview-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .work-role {
@@ -937,6 +1021,9 @@ footer {
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 0, 0, 0.06);
     padding: 1.5rem;
+}
+
+.card, .project-item, .about-card, .experience-card, .contact-card {
     transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 

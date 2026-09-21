@@ -52,17 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavLink();
 
     // Certificate Lightbox
-    const certCards = document.querySelectorAll('.achievement-card');
+    const certElements = document.querySelectorAll('.achievement-card, .work-cert-wrapper');
     const lightbox = document.getElementById('certLightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    if (lightbox && certCards.length > 0) {
-        certCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const certSrc = card.getAttribute('data-cert');
-                const certTitle = card.getAttribute('data-title');
+    if (lightbox && certElements.length > 0) {
+        certElements.forEach(element => {
+            element.addEventListener('click', () => {
+                const certSrc = element.getAttribute('data-cert');
+                const certTitle = element.getAttribute('data-title');
                 
                 if (certSrc) {
                     lightboxImg.src = certSrc;
